@@ -1,8 +1,25 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import type { AppProps } from "next/app";
+
+import { useEffect } from "react";
+import { ChakraProvider } from "@chakra-ui/react";
+
+import theme from "../assets/theme";
+import SEO from "@components/common/SEO";
+import PWA from "@components/common/PWA";
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
-}
+  useEffect(() => {
+    document.body.classList?.remove("loading");
+  }, []);
 
-export default MyApp
+  return (
+    <>
+      <PWA />
+      <SEO />
+      <ChakraProvider theme={theme}>
+        <Component {...pageProps} />
+      </ChakraProvider>
+    </>
+  );
+}
+export default MyApp;

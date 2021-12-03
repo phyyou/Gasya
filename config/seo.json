@@ -1,0 +1,38 @@
+{
+    "title": "가스야",
+    "titleTemplate": "%s - 가스야",
+    "description": "NFT Helper",
+    "openGraph": {
+        "title": "가스야 | NFT Helper",
+        "description": "NFT 유틸리티",
+        "type": "website",
+        "locale": "ko_KR",
+        "url": "https://gasya.net",
+        "site_name": "가스야",
+        "images": [
+            {
+                "url": "/icons/maskable_icon_x128.png",
+                "width": 128,
+                "height": 128,
+                "alt": "가스야"
+            },
+            {
+                "url": "/icons/maskable_icon_x512.png",
+                "width": 512,
+                "height": 512,
+                "alt": "가스야"
+            },
+            {
+                "url": "/icons/maskable_icon.png",
+                "width": 1024,
+                "height": 1024,
+                "alt": "가스야"
+            }
+        ]
+    },
+    "twitter": {
+        "handle": "@gasya",
+        "site": "@gasya",
+        "cardType": "summary_large_image"
+    }
+}

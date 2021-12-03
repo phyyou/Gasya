@@ -8,9 +8,18 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@chakra-ui/react": "^1.7.2",
+    "@emotion/react": "^11",
+    "@emotion/styled": "^11",
+    "framer-motion": "^4",
+    "highcharts": "^9.3.2",
+    "highcharts-react-official": "^3.1.0",
     "next": "12.0.4",
+    "next-pwa": "^5.4.1",
+    "next-seo": "^4.28.1",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "swr": "^1.1.0"
   },
   "devDependencies": {
     "@types/node": "16.11.11",
