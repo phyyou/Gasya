@@ -9,7 +9,7 @@
     "description": "가스야 - NFT Helper",
     "icons": [
         {
-            "src": "/icon/gasya.svg",
+            "src": "/icons/gasya.svg",
             "sizes": "100x100",
             "type": "image/svg+xml"
         },
