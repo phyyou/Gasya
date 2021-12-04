@@ -22,7 +22,7 @@ const options: Highcharts.Options = {
 const GasChart: FC<HighchartsReact.Props> = (props) => {
   const chartComponentRef = useRef<HighchartsReact.RefObject>(null);
   return (
-    <Box>
+    <Box w={"full"}>
       <HighchartsReact
         highcharts={Highcharts}
         options={options}
