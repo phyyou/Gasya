@@ -9,6 +9,7 @@ module.exports = withPWA({
     dest: "public",
     register: true,
     sw: "service-worker.js",
+    buildExcludes: [/middleware-manifest.json$/],
     runtimeCaching,
   },
 });
