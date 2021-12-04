@@ -1,13 +1,19 @@
-import { Box, Stat, StatHelpText, StatNumber, Heading } from "@chakra-ui/react";
+import {
+  Box,
+  Stat,
+  StatHelpText,
+  StatNumber,
+  Heading,
+  Skeleton,
+  SkeletonText,
+} from "@chakra-ui/react";
 import React, { FC } from "react";
 
 interface Props {
   title?: string;
-  ETH?: number;
-  KRW?: number;
 }
 
-const GasBox: FC<Props> = ({ title, ETH, KRW }) => {
+const SkeletonGasBox: FC<Props> = ({ title }) => {
   return (
     <Box>
       <Heading textAlign={"center"} size={"sm"}>
@@ -21,13 +27,15 @@ const GasBox: FC<Props> = ({ title, ETH, KRW }) => {
       >
         <Stat paddingTop={"8"} textAlign={"center"}>
           <StatNumber textShadow={"0 4px 8px rgb(0 0 0 / 25%)"}>
-            {ETH && ETH.toFixed(5) + " ETH"}
+            <SkeletonText />
           </StatNumber>
-          <StatHelpText>{KRW?.toLocaleString()}원</StatHelpText>
+          <StatHelpText>
+            <SkeletonText />
+          </StatHelpText>
         </Stat>
       </Box>
     </Box>
   );
 };
 
-export default GasBox;
+export default SkeletonGasBox;

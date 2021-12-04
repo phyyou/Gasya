@@ -1,8 +1,18 @@
 import React, { FC } from "react";
-import { Stack } from "@chakra-ui/react";
+import {
+  CircularProgress,
+  Stack,
+  Skeleton,
+  Box,
+  Heading,
+  Stat,
+  StatNumber,
+  StatHelpText,
+} from "@chakra-ui/react";
 import GasBox from "./GasBox";
 import useGas from "@lib/hooks/useGas";
 import useETHPrice from "@lib/hooks/useETHPrice";
+import SkeletonGasBox from "./SkeletonGasBox";
 
 const GasBoxView: FC = () => {
   const { gas } = useGas();
@@ -13,14 +23,29 @@ const GasBoxView: FC = () => {
       marginTop={"3rem"}
       spacing={{ base: "4", md: "24" }}
     >
-      {gas && ethData && (
+      {gas && ethData ? (
         <>
-          <GasBox ETH={gas.low} KRW={ethData[0].trade_price * gas.low} />
           <GasBox
-            ETH={gas.standard}
-            KRW={ethData[0].trade_price * gas.standard}
+            title={"느리게"}
+            ETH={gas.low}
+            KRW={Math.round(ethData[0].trade_price * gas.low)}
           />
-          <GasBox ETH={gas.fast} KRW={ethData[0].trade_price * gas.fast} />
+          <GasBox
+            title={"평균"}
+            ETH={gas.standard}
+            KRW={Math.round(ethData[0].trade_price * gas.standard)}
+          />
+          <GasBox
+            title={"빠르게"}
+            ETH={gas.fast}
+            KRW={Math.round(ethData[0].trade_price * gas.fast)}
+          />
+        </>
+      ) : (
+        <>
+          <SkeletonGasBox title={"느리게"} />
+          <SkeletonGasBox title={"평균"} />
+          <SkeletonGasBox title={"빠르게"} />
         </>
       )}
     </Stack>
